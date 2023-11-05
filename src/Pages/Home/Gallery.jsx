@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
-    <div className="min-h-screen my-20">
+    <div className=" my-20">
       <div className="grid lg:grid-cols-4  grid-cols-1">
         <div className="lg:col-span-1 p-10">
           <h1 className="uppercase font-semibold text-3xl  ">Out Gallery</h1>

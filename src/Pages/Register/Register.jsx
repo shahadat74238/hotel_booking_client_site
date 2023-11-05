@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -53,6 +54,9 @@ const Register = () => {
 
   return (
     <div className="bg-[url('https://digital.ihg.com/is/image/ihg/ihgor-member-rate-web-offers-1440x720')] bg-no-repeat bg-cover bg-center">
+      <Helmet>
+        <title className="uppercase">Five Star | Register</title>
+      </Helmet>
       <div className="container mx-auto lg:py-10 ">
         <div className="grid grid-cols-1  lg:grid-cols-2 min-h-screen">
           <div className=" overflow-hidden  bg-[url('https://digital.ihg.com/is/image/ihg/ihgor-member-rate-web-offers-1440x720')] bg-no-repeat bg-cover bg-center">

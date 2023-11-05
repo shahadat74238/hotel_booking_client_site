@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const [error, setError] = useState("")
@@ -40,6 +41,9 @@ const Login = () => {
 
   return (
     <div className="bg-[url('https://digital.ihg.com/is/image/ihg/ihgor-member-rate-web-offers-1440x720')] bg-no-repeat bg-cover bg-center">
+      <Helmet>
+        <title className="uppercase">Five Star | Login </title>
+      </Helmet>
       <div className="container mx-auto py-10">
         <div style={{ boxShadow: '2px 10px 10px 1px rgba(0, 0, 0, 0.4)' }} className=" lg:w-2/4 w-4/5 mx-auto ">
           <div className=" overflow-hidden  bg-[url('https://digital.ihg.com/is/image/ihg/ihgor-member-rate-web-offers-1440x720')] bg-no-repeat bg-cover bg-center h-80">
