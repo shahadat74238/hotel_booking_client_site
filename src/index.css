@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.f-btn{
+    @apply border-2 text-lg font-semibold text-f-color border-f-color duration-500 hover:bg-f-color hover:text-white 
+}
+.s-btn{
+    @apply text-white text-lg bg-f-color font-semibold duration-500 border-2 border-f-color hover:text-f-color hover:bg-transparent
+}
