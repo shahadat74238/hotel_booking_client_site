@@ -13,7 +13,7 @@ const Gallery = () => {
             Experience the pinnacle of luxury, where every detail is carefully
             curated to provide you with a memorable stay.
           </p>
-          <Link className="text-f-color underline font-semibold">View All</Link>
+          <Link to="/gallery" className="text-f-color underline font-semibold">View All</Link>
         </div>
         <div className="lg:col-span-3  ">
           <Swiper

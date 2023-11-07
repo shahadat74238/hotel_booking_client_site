@@ -10,6 +10,7 @@ import PrivetRouter from "./PrivetRouter";
 import RoomDetails from "../Pages/RoomDetails/RoomDetails";
 import Information from "../Pages/RoomDetails/Information";
 import Reviews from "../Pages/RoomDetails/Reviews";
+import AllGallery from "../Pages/AllGallery/AllGallery";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             <Bookings />
           </PrivetRouter>
         ),
+      },
+      {
+        path: "/gallery",
+        element: <AllGallery />,
       },
       {
         path: "/about",

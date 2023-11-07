@@ -63,6 +63,16 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to="/gallery"
+          className={({ isActive }) =>
+            isActive ? "text-f-color font-semibold text-lg uppercase" : " font-semibold text-lg uppercase"
+          }
+        >
+          Gallery
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/about"
           className={({ isActive }) =>
             isActive ? "text-f-color font-semibold text-lg uppercase" : " font-semibold text-lg uppercase"
