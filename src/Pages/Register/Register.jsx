@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -46,6 +47,9 @@ const Register = () => {
         });
         navigate('/')
         window.location.reload();
+        toast.success("Successfully Account Created!",{
+          duration: 4000,
+        });
       })
       .catch((error) => {
         setError(error.message);

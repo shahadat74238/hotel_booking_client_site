@@ -1,16 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
   return (
     <div>
       <Swiper
-        spaceBetween={30}
+        spaceBetween={0}
         centeredSlides={true}
         autoplay={{
           delay: 5000,

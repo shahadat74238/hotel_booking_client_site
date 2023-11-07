@@ -9,7 +9,7 @@ const PrivetRouter = ({children}) => {
 
     if(isLoading){
         return (
-            <div>
+            <div className="min-h-screen">
                 <h1>Loading ...</h1>
             </div>
         );

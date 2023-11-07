@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
+import logo from "../../../public/logo.png";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -8,7 +10,9 @@ const Navbar = () => {
   const handleLogout = () => {
     logOut()
       .then(() => {
-        console.log("Successfully logged out");
+        toast.success("Successfully logged out !", {
+          duration: 4000,
+        });
       })
       .catch((err) => {
         console.log(err.message);
@@ -61,11 +65,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-base-100 w-full">
-      <div className="navbar container mx-auto bg-base-100">
-        <div className="navbar-start ">
+    <div className="bg-base-100 w-full ">
+      <div className="navbar container mx-auto px-5 bg-base-100">
+        <div className="navbar-start z-10 ">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <button  tabIndex={0} className="mr-3 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -80,7 +84,7 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-            </label>
+            </button>
             {/* Tablet view */}
             <ul
               tabIndex={0}
@@ -90,15 +94,15 @@ const Navbar = () => {
             </ul>
           </div>
           <Link className="flex gap-2 items-center">
-            <img className="h-10" src="../logo.png" alt="Loading Logo" />
-            <p style={{letterSpacing: "5px"}} className="text-2xl font-semibold uppercase">Five Star</p>
+            <img className="md:h-10 h-5" src={logo} alt="Loading Logo" />
+            <p style={{letterSpacing: "5px"}} className="md:text-2xl font-semibold uppercase">Five Star</p>
           </Link>
         </div>
         {/* Desktop view */}
         <div className="navbar-center hidden lg:flex">
           <ul className="gap-5 menu-horizontal px-1">{navLinks}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end z-10">
           {user ? (
             <div className="dropdown dropdown-end">
               <div tabIndex={0} className="avatar online">

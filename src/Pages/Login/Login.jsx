@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState("")
@@ -17,11 +18,14 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
+        const toastId = toast.loading('Loading to Login...');
+
         loginUser(email, password)
         .then((res) => {
             console.log(res.user);
             navigate(location.state ? location.state : '/')
             window.location.reload();
+            toast.success('Successfully Logged!',{id: toastId});
         })
         .catch(() => {
             setError("Invalid username or password. Please try again!!");
@@ -33,6 +37,7 @@ const Login = () => {
         .then((res) => {
             console.log(res.user);
             navigate(location.state ? location.state : '/')
+            toast.success('Successfully Logged!');
         })
         .catch((err) => {
             console.log(err.message);
