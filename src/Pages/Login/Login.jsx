@@ -4,44 +4,60 @@ import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import toast from 'react-hot-toast';
+import useAxios from "../../Hooks/useAxios";
 
 const Login = () => {
     const [error, setError] = useState("")
     const {loginUser, loginWithGoogle} = useAuth();
     const location = useLocation();
+    const axios = useAxios();
     const navigate = useNavigate();
 
-    const handleLogin = (event) => {
+    const handleLogin = async(event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         const toastId = toast.loading('Loading to Login...');
-
-        loginUser(email, password)
-        .then((res) => {
-            console.log(res.user);
-            navigate(location.state ? location.state : '/')
-            window.location.reload();
-            toast.success('Successfully Logged!',{id: toastId});
-        })
-        .catch(() => {
+        try{
+          const user = await loginUser(email, password);
+          await axios.post("/token", {email: user.user.email})
+          navigate(location.state ? location.state : '/')
+          window.location.reload();
+          toast.success("Login successful!", {id: toastId});
+          console.log(user);
+        } catch (err) {
+          {
             setError("Invalid username or password. Please try again!!");
-        });
+          }
+        }
     };
 
-    const handleGoogleLogin = () => {
-        loginWithGoogle()
-        .then((res) => {
-            console.log(res.user);
-            navigate(location.state ? location.state : '/')
-            toast.success('Successfully Logged!');
-        })
-        .catch((err) => {
-            console.log(err.message);
-        });
+    const handleGoogleLogin = async () => {
+      const toastId = toast.loading('Loading to Login...');
+        try{
+          const user = await loginWithGoogle()
+          await axios.post("/token", {email: user.user.email})
+          navigate(location.state ? location.state : '/')
+          window.location.reload();
+          toast.success("Login successful!", {id: toastId});
+          console.log(user);
+        } catch (err) {
+          {
+            setError("Please try again!!");
+          }
+        }
+
+        // loginWithGoogle()
+        // .then((res) => {
+        //     console.log(res.user);
+        //     navigate(location.state ? location.state : '/')
+        //     toast.success('Successfully Logged!');
+        // })
+        // .catch((err) => {
+        //     console.log(err.message);
+        // });
     };
 
   return (

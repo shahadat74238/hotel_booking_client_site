@@ -34,6 +34,7 @@ const Comment = () => {
     try {
       const response = await axios.post("/comments", data);
       console.log("Response data:", response.data);
+      window.location.reload();
       toast.success("Comment posted successfully")
     } catch (error) {
       console.error("Error posting data:", error);

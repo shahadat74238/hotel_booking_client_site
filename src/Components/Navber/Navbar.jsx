@@ -3,11 +3,21 @@ import { FaHome } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import logo from "../../../public/logo.png";
+import useAxios from "../../Hooks/useAxios";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const axios = useAxios();
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
+
+    try{
+      await logOut() 
+      await axios.post("/logout")
+    }
+    catch (err){
+      console.log(err.message);
+    }
     logOut()
       .then(() => {
         toast.success("Successfully logged out !", {

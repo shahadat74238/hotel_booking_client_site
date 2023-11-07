@@ -6,6 +6,7 @@ import Comment from "./Comment";
 const Reviews = () => {
   const axios = useAxios();
   const { id } = useParams();
+  
   const getRoom = async () => {
     try {
       const res = await axios.get(`/comments?roomId=${id}`);
@@ -34,7 +35,7 @@ const Reviews = () => {
       <div className="space-y-10">
         <h1 className="text-xl font-semibold uppercase ">Comments</h1>
         {review?.data.length > 0 ? (
-          <div>
+          <div className="space-y-5">
             {review?.data.map((r) => (
               <div key={r._id} className="flex gap-10">
                 <div>
