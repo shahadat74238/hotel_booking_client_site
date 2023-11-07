@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Gallery from "../Home/Gallery";
 
 const About = () => {
   return (
@@ -22,6 +23,9 @@ const About = () => {
             
           </div>
         </div>
+      </div>
+      <div>
+        <Gallery />
       </div>
     </div>
   );

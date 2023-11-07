@@ -8,6 +8,8 @@ const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
 
+
+
   const getRoom = async () => {
     try {
       const res = await axios.get(`/rooms/${id}`);
@@ -68,7 +70,7 @@ const RoomDetails = () => {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-1 border">
+        <div className="lg:col-span-1">
             <Side room={room.data} />
         </div>
       </div>

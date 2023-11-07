@@ -1,104 +1,115 @@
 [
-    {
-      "roomTitle": "Deluxe Suite",
-      "information": "A spacious and luxurious suite with a king-size bed, a private balcony with a view of the ocean, and all the amenities you need for a comfortable stay.",
-      "price": 250,
-        "banner":"https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-1.jpg",
-      "images": [
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-1.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-3.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-4.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-5.jpg"
-      ],
-      "specialOffers": [
-        {
-          "offerTitle": "Weekend Getaway",
-          "offerDescription": "Book a weekend stay and enjoy a 20% discount. Limited time offer!",
-          "offerPrice": 200
-        },
-        {
-          "offerTitle": "Extended Stay",
-          "offerDescription": "Stay for 5 nights or more and get the 6th night free. Perfect for long vacations!",
-          "offerPrice": 200
-        }
-      ]
-    },
-    {
-      "roomTitle": "Standard Double Room",
-      "information": "A comfortable room with two double beds and essential amenities for a cozy stay.",
-      "price": 120,
-      "banner":"https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-6.jpg",
-      "images": [
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-6.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-5.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-4.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-3.jpg"
-      ],
-      "specialOffers": []
-    },
-    {
-      "roomTitle": "Executive Suite",
-      "information": "A spacious suite with a separate living area, a king-size bed, and a breathtaking city view.",
-      "price": 350,
-      "banner":"https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-4.jpg",
-        "images": [
-          "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-4.jpg",
-          "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-3.jpg",
-          "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-2.jpg",
-          "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-5.jpg"
-        ],
-      "specialOffers": [
-        {
-          "offerTitle": "Business Package",
-          "offerDescription": "For business travelers - includes complimentary breakfast and high-speed internet.",
-          "offerPrice": 320
-        }
-      ]
-    },
-    {
-      "roomTitle": "Family Suite",
-      "information": "A family-friendly suite with two bedrooms, a kitchenette, and plenty of space for everyone.",
-      "price": 280,
-      "banner":"https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-3.jpg",
-      "images": [
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-3.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-4.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-2.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-5.jpg"
-      ],
-      "specialOffers": []
-    },
-    {
-      "roomTitle": "Junior Suite",
-      "information": "A comfortable suite with a queen-size bed, a small sitting area, and modern amenities.",
-      "price": 180,
-      "banner":"https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-1.jpg",
-      "images": [
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-1.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-4.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-3.jpg",
-        "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-2.jpg"
-      ],
-      "specialOffers": []
-    },
-    {
-      "roomTitle": "Ocean View Room",
-      "information": "A room with a stunning ocean view, a comfortable bed, and a private balcony.",
-      "price": 200,
-      "banner":"https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-4.jpg",
-      "images": [
-        "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-4.jpg",
-        "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-5.jpg",
-        "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-3.jpg",
-        "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-2.jpg"
-      ],
-      "specialOffers": [
-        {
-          "offerTitle": "Romantic Getaway",
-          "offerDescription": "Book a romantic weekend and receive a complimentary bottle of champagne.",
-          "offerPrice": 190.00
-        }
-      ]
-    }
-  ]
-  
+  {
+    "roomTitle": "Deluxe Suite",
+    "information": "A spacious and luxurious suite with a king-size bed, a private balcony with a view of the ocean, and all the amenities you need for a comfortable stay.",
+    "price": 250,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-1.jpg",
+    "images": [
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-1.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-3.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-4.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-1-img-5.jpg"
+    ],
+    "specialOffers": [
+      {
+        "offerTitle": "Weekend Getaway",
+        "offerDescription": "Book a weekend stay and enjoy a 20% discount. Limited time offer!",
+        "offerPrice": 200
+      },
+      {
+        "offerTitle": "Extended Stay",
+        "offerDescription": "Stay for 5 nights or more and get the 6th night free. Perfect for long vacations!",
+        "offerPrice": 200
+      }
+    ]
+  },
+  {
+    "roomTitle": "Standard Double Room",
+    "information": "A comfortable room with two double beds and essential amenities for a cozy stay.",
+    "price": 120,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-6.jpg",
+    "images": [
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-6.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-5.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-4.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-2-img-3.jpg"
+    ],
+    "specialOffers": []
+  },
+  {
+    "roomTitle": "Executive Suite",
+    "information": "A spacious suite with a separate living area, a king-size bed, and a breathtaking city view.",
+    "price": 350,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-4.jpg",
+    "images": [
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-4.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-3.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-2.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/cyti-room-3-img-5.jpg"
+    ],
+    "specialOffers": [
+      {
+        "offerTitle": "Business Package",
+        "offerDescription": "For business travelers - includes complimentary breakfast and high-speed internet.",
+        "offerPrice": 320
+      }
+    ]
+  },
+  {
+    "roomTitle": "Family Suite",
+    "information": "A family-friendly suite with two bedrooms, a kitchenette, and plenty of space for everyone.",
+    "price": 280,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-3.jpg",
+    "images": [
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-3.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-4.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-2.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/mainhome-room-3-img-5.jpg"
+    ],
+    "specialOffers": []
+  },
+  {
+    "roomTitle": "Junior Suite",
+    "information": "A comfortable suite with a queen-size bed, a small sitting area, and modern amenities.",
+    "price": 180,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-1.jpg",
+    "images": [
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-1.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-4.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-3.jpg",
+      "https://fivestar.qodeinteractive.com/wp-content/uploads/2017/12/List-img-1-gallery-img-2.jpg"
+    ],
+    "specialOffers": []
+  },
+  {
+    "roomTitle": "Ocean View Room",
+    "information": "A room with a stunning ocean view, a comfortable bed, and a private balcony.",
+    "price": 200,
+    "isBooked": false,
+    "endDate": "",
+    "banner": "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-4.jpg",
+    "images": [
+      "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-4.jpg",
+      "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-5.jpg",
+      "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-3.jpg",
+      "https://fivestar1.qodeinteractive.com/wp-content/uploads/2017/12/nature-room-2-img-2.jpg"
+    ],
+    "specialOffers": [
+      {
+        "offerTitle": "Romantic Getaway",
+        "offerDescription": "Book a romantic weekend and receive a complimentary bottle of champagne.",
+        "offerPrice": 190.0
+      }
+    ]
+  }
+]
