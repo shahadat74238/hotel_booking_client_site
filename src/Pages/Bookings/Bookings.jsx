@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
 import Loading from "../../Components/Loading/Loading";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Bookings = () => {
   const axios = useAxios();
@@ -21,6 +23,11 @@ const Bookings = () => {
   const formattedDate1 = new Intl.DateTimeFormat("en-US", options).format(
     newDate
   );
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   const getRooms = async () => {
     try {
@@ -101,7 +108,7 @@ const Bookings = () => {
           {bookingData?.length > 0 ? (
             <div className="lg:col-span-3 grid  gap-10">
               {bookingData?.map((b) => (
-                <div key={b._id} className="grid grid-cols-1 md:grid-cols-2 ">
+                <div data-aos="zoom-in" data-aos-duration="2000" key={b._id} className="grid grid-cols-1 md:grid-cols-2 ">
                   <div className=" overflow-hidden">
                     <img
                       className="h-full w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"
@@ -158,7 +165,7 @@ const Bookings = () => {
               ))}
             </div>
           ) : (
-            <div className="lg:col-span-3">
+            <div data-aos="zoom-in" data-aos-duration="2000" className="lg:col-span-3">
               <p className="text-5xl font-semibold text-center text-gray-400">
                 No Booking Room Available !
               </p>
