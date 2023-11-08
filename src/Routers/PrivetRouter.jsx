@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import useAuth from "../Hooks/useAuth";
 import { Navigate, useLocation } from "react-router-dom";
+import Loading from "../Components/Loading/Loading";
 
 const PrivetRouter = ({children}) => {
     const {user, isLoading} = useAuth();
@@ -9,8 +10,8 @@ const PrivetRouter = ({children}) => {
 
     if(isLoading){
         return (
-            <div className="min-h-screen">
-                <h1>Loading ...</h1>
+            <div>
+                <Loading />
             </div>
         );
     }

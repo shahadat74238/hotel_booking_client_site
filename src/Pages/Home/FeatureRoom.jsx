@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAxios from "../../Hooks/useAxios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loading from "../../Components/Loading/Loading";
 
 const FeatureRoom = () => {
   const axios = useAxios();
@@ -30,7 +31,7 @@ const FeatureRoom = () => {
   if (!isLoading) {
     return (
       <div className="min-h-screen">
-        <h1>Loading ...</h1>
+        <Loading />
       </div>
     );
   }

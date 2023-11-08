@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Gallery from "../Home/Gallery";
+import Loading from "../../Components/Loading/Loading";
 
 const Rooms = () => {
   const axios = useAxios();
@@ -38,8 +39,8 @@ const Rooms = () => {
   
   if (!isLoading) {
     return (
-      <div className="min-h-screen">
-        <h1>Loading ...</h1>
+      <div>
+        <Loading></Loading>
       </div>
     );
   }
