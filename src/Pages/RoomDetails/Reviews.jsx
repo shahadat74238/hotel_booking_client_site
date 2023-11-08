@@ -32,7 +32,7 @@ const Reviews = () => {
   console.log(review.data);
 
   return (
-    <div className="ml-10">
+    <div className="ml-10 px-5">
       <h1 className="text-xl font-semibold uppercase ">Reviews: {review?.data.length}</h1>
       <hr className="border my-10 " />
       <div className="space-y-10">

@@ -32,7 +32,7 @@ const RoomDetails = () => {
   console.log(room.data);
 
   return (
-    <div className="w-full ">
+    <div className="w-full px-5">
         <div className="h-24 flex items-end p-5 bg-slate-100">
             <div className="container mx-auto">
             <h1 className="text-2xl uppercase font-bold">{room.data.roomTitle}</h1>
