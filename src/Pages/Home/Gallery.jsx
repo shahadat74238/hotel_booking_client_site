@@ -14,11 +14,11 @@ const Gallery = () => {
     <div className=" my-20">
       <div className="grid lg:grid-cols-4  grid-cols-1">
         <div className="lg:col-span-1 p-10">
-          <div data-aos="fade-down" data-aos-duration="2000">
+          <div data-aos="fade-up" data-aos-duration="2000">
             <h1 className="uppercase font-semibold text-3xl  ">Out Gallery</h1>
             <hr className="my-5 w-24 border border-f-color" />
           </div>
-          <div data-aos="fade-down" data-aos-duration="2000">
+          <div data-aos="fade-up" data-aos-duration="2000">
             <p className="mb-5">
               Experience the pinnacle of luxury, where every detail is carefully
               curated to provide you with a memorable stay.
