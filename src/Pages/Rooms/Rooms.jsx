@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const Rooms = () => {
   const axios = useAxios();
-  const [rooms, setRooms] = useState();
+  const [rooms, setRooms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const [price, setPrice] = useState("");
@@ -53,11 +53,13 @@ const Rooms = () => {
               resorts, or similar establishments. They provide varying levels of
               comfort and space to cater to the diverse needs of guests.
             </p>
-            <div>
+            <div className="mt-5">
               <select
                 onChange={(e) => handleSort(e.target.value)}
-                className="select select-error w-full max-w-xs"
+                className="select select-warning w-52"
+                defaultValue="Sort BY"
               >
+                <option disabled value="sortBy" >Sort By</option>
                 <option value="a-z">A-Z</option>
                 <option value="highToLow">High to Low Price</option>
                 <option value="lowToHigh">Low to High Price</option>

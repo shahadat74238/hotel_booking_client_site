@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Gallery from "./Gallery";
 import Services from "./Services";
 import GoogleMap from "./GoogleMap";
+import FeatureRoom from "./FeatureRoom";
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             </Helmet>
             <Banner />
             <Services />
+            <FeatureRoom />
             <Gallery />
             <GoogleMap />
         </div>

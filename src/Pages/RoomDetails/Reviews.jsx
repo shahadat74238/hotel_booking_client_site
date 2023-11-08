@@ -2,6 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
+import Rating from "react-rating";
+import { AiFillStar } from 'react-icons/ai';
+
 
 const Reviews = () => {
   const axios = useAxios();
@@ -33,7 +36,6 @@ const Reviews = () => {
       <h1 className="text-xl font-semibold uppercase ">Reviews: {review?.data.length}</h1>
       <hr className="border my-10 " />
       <div className="space-y-10">
-        <h1 className="text-xl font-semibold uppercase ">Comments</h1>
         {review?.data.length > 0 ? (
           <div className="space-y-5">
             {review?.data.map((r) => (
@@ -51,6 +53,12 @@ const Reviews = () => {
                   <h1 className="text-lg font-semibold ">{r.name}</h1>
                   <h3 className="text-gray-400">{r.formattedDate}</h3>
                   <p className="text-justify">{r.comment}</p>
+                  <Rating
+               fullSymbol={<AiFillStar className="text-2xl text-f-color" />}
+               fractions={2}
+               initialRating={r.rating}
+               readonly
+            />
                 </div>
               </div>
             ))}

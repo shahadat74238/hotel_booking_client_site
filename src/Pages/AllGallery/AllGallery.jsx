@@ -11,9 +11,9 @@ const AllGallery = () => {
               style={{ letterSpacing: "5px" }}
               className="text-2xl text-center md:text-5xl font-bold uppercase text-white"
             >
-              About US
+             Gallery
             </h1>
-            <hr className="lg:my-8 md:my-4 my-2 w-60 mx-auto border border-f-color" />
+            <hr className="lg:my-8 md:my-4  w-32 mx-auto border border-f-color" />
           </div>
         </div>
       </div>

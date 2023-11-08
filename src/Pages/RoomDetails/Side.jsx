@@ -4,13 +4,28 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
-import toast from "react-hot-toast";
+import Swal from "sweetalert2";
+
 
 const Side = ({ room }) => {
+  
   const [checkIn, setCheckIn] = useState(new Date());
-  const [checkOut, setCheckOut] = useState(new Date());
+  const [checkOut, setCheckOut] = useState(new Date().setDate(new Date().getDate() + 1));
   const axios = useAxios();
   const { user } = useAuth();
+
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  const formattedDate1 = new Intl.DateTimeFormat("en-US", options).format(
+    checkIn
+  );
+  const formattedDate2 = new Intl.DateTimeFormat("en-US", options).format(
+    checkOut
+  );
+
 
   const handleBooking = async (event) => {
     event.preventDefault();
@@ -28,8 +43,8 @@ const Side = ({ room }) => {
     const email = event.target.email.value;
 
     const bookingData = {
-      checkIn,
-      checkOut,
+      checkIn: formattedDate1,
+      checkOut: formattedDate2,
       email,
       roomId,
       userName,
@@ -39,18 +54,29 @@ const Side = ({ room }) => {
       roomPhoto,
       roomInformation,
     };
-    if (checkIn < new Date()) {
-      return toast.error("Previous date is not allow!");
-    }
 
-    try {
-      const response = await axios.post("/booking", bookingData);
-      console.log("Response data:", response.data);
-      window.location.reload();
-      toast.success("Comment posted successfully");
-    } catch (error) {
-      console.error("Error posting data:", error);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to booking this Room!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Booking.",
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await axios.post("/booking", bookingData);
+          console.log("Response data:", response.data);
+          Swal.fire("Successfully Booking");
+          window.location.reload();
+        } catch (error) {
+          console.error("Error posting data:", error);
+        }
+      }
+    });
+
+    
   };
 
   return (
@@ -80,6 +106,7 @@ const Side = ({ room }) => {
               dateFormat="MMMM d, yyyy "
               selected={checkIn}
               onChange={(date) => setCheckIn(date)}
+              minDate={new Date()}
             />
           </div>
           <div>
@@ -90,6 +117,7 @@ const Side = ({ room }) => {
               dateFormat="MMMM d, yyyy "
               selected={checkOut}
               onChange={(date) => setCheckOut(date)}
+              minDate={new Date().setDate(new Date().getDate() + 1)}
             />
           </div>
         </div>
@@ -106,7 +134,13 @@ const Side = ({ room }) => {
           </p>
         </div>
         <div>
-          <button className={`s-btn w-full ${room.isBooked ? 'pointer-events-none opacity-50' : "" }  h-12`}>BOOK NOW</button>
+          <button
+            className={`s-btn w-full ${
+              room.isBooked ? "pointer-events-none opacity-50" : ""
+            }  h-12`}
+          >
+            BOOK NOW
+          </button>
         </div>
       </form>
     </div>

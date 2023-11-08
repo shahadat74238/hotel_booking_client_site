@@ -4,11 +4,22 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import BookingSide from "./BookingSide";
 import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import Swal from "sweetalert2";
 
 const Bookings = () => {
   const axios = useAxios();
   const { user } = useAuth();
   const [bookingData, setBookingData] = useState();
+  const [newDate, setNewDate] = useState(new Date());
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  const formattedDate1 = new Intl.DateTimeFormat("en-US", options).format(
+    newDate
+  );
 
   const getRooms = async () => {
     try {
@@ -23,6 +34,7 @@ const Bookings = () => {
     queryKey: ["booking"],
     queryFn: getRooms,
   });
+
   useEffect(() => {
     if (booking?.data) {
       setBookingData(booking.data);
@@ -37,15 +49,41 @@ const Bookings = () => {
     );
   }
 
-  const handleCancel = async(id) => {
+  const handleUpdate = async(id) => {
     try {
-        const res = await axios.delete(`/booking/${id}`);
-        const remaining = bookingData?.filter(book => book._id !== id);
-        setBookingData(remaining)
-        return res;
-      } catch (error) {
-        console.log(error);
+      const res = await axios.put(`/booking?id=${id}`, {newDate: formattedDate1});
+      window.location.reload();
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  const handleCancel = async (id) => {
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+        try {
+          const res = await axios.delete(`/booking/${id}`);
+          const remaining = bookingData?.filter((book) => book._id !== id);
+          setBookingData(remaining);
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          return res;
+        } catch (error) {
+          console.log(error);
+        }
       }
+    });
+    
   };
 
   return (
@@ -59,38 +97,58 @@ const Bookings = () => {
         </h1>
         <div className=" grid gap-10 my-20 lg:grid-cols-4">
           {bookingData?.length > 0 ? (
-            <div className="lg:col-span-3 grid grid-cols-2 gap-10">
+            <div className="lg:col-span-3 grid  gap-10">
               {bookingData?.map((b) => (
-                <div key={b._id} className=" group cursor-pointer">
-                  <div className="relative overflow-hidden">
+                <div key={b._id} className="grid grid-cols-1 md:grid-cols-2 ">
+                  <div className=" overflow-hidden">
                     <img
-                      className="h-60 w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"
                       src={b.roomPhoto}
                       alt="Loading Image"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 bg-black bg-opacity-50 transition-opacity duration-500 group-hover:opacity-100">
-                      <div className="space-y-1 text-center">
-                        <h1 className="font-semibold text-lg text-white">
-                          Staring from
-                        </h1>
-                        <h2 className="text-white text-2xl font-bold">
-                          ${b.roomPrice}{" "}
-                          <span className="text-lg">/ night</span>
-                        </h2>
+                  </div>
+                  <div className="pt-5  px-7">
+                    <h1 className="text-2xl text-center font-bold">
+                      {b.roomName}
+                    </h1>
+                    <hr className="w-28 border-black my-3 border mx-auto" />
+                    <div>
+                      <p className="text-lg font-medium">
+                        Price:{" "}
+                        <span className="text-gray-400">
+                          {b.roomPrice}$ /night
+                        </span>
+                      </p>
+                      <p className="text-lg font-medium">
+                        Check In Date:{" "}
+                        <span className="text-gray-400">{b.checkIn}</span>
+                      </p>
+                      <p className="text-lg font-medium">
+                        Check Out Date:{" "}
+                        <span className="text-gray-400">{b.checkOut}</span>
+                      </p>
+                      <div className="mt-5">
+                        <p className="text-lg font-medium" >Update Your Check Out Date</p>
+                        <DatePicker
+                          className="w-full outline-none border text-black text-center font-semibold text-lg"
+                          showIcon
+                          dateFormat="MMMM d, yyyy "
+                          selected={newDate}
+                          onChange={(date) => setNewDate(date)}
+                          minDate={new Date()}
+                        />
                       </div>
                     </div>
-                  </div>
-                  <div className="pt-5 text-center px-7">
-                    <h1 className="text-2xl font-bold">{b.roomName}</h1>
-                    <hr className="w-28 border-black my-3 border mx-auto" />
-                    <p className="">{b.roomInformation.slice(0, 80)}...</p>
 
                     <div className="grid grid-cols-2 gap-10 mt-5">
-                      <button onClick={()=>handleCancel(b._id)} className="s-btn w-full h-10 uppercase">
+                      <button
+                        onClick={() => handleCancel(b._id)}
+                        className="s-btn w-full h-10 uppercase"
+                      >
                         Cancel
                       </button>
-                      <button className="f-btn w-full h-10 uppercase">
-                        Update Booking
+                      <button onClick={()=>handleUpdate(b._id)} className="f-btn w-full h-10 uppercase">
+                        Update Date
                       </button>
                     </div>
                   </div>

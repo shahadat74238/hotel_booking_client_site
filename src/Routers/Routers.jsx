@@ -11,11 +11,13 @@ import RoomDetails from "../Pages/RoomDetails/RoomDetails";
 import Information from "../Pages/RoomDetails/Information";
 import Reviews from "../Pages/RoomDetails/Reviews";
 import AllGallery from "../Pages/AllGallery/AllGallery";
+import ErrorPage from "../Pages/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

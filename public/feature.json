@@ -1,0 +1,20 @@
+[
+  {
+    "roomTitle": "Standard  Room",
+    "information": "A comfortable room with two double beds and essential amenities for a cozy stay.",
+    "price": 360,
+    "banner": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/aa/71/78/adjoining-rooms.jpg?w=1200&h=-1&s=1&cx=1210&cy=934&chk=v1_3234c27ecc0a72be8242"
+  },
+  {
+    "roomTitle": " Double Room",
+    "information": "A comfortable room with two double beds and essential amenities for a cozy stay.",
+    "price": 500,
+    "banner": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/50569-istock-486178472-6c4e6f5c9316e18817521aaaef2887b0.jpg"
+  },
+  {
+    "roomTitle": "Standard Room",
+    "information": "A comfortable room with two double beds and essential amenities for a cozy stay.",
+    "price": 420,
+    "banner": "https://dunhillhotel.com/wp-content/uploads/2020/07/Rooms-Top-Header-1400x712.jpg"
+  }
+]
