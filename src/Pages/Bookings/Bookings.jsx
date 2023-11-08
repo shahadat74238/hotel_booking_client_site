@@ -6,6 +6,7 @@ import BookingSide from "./BookingSide";
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
+import Loading from "../../Components/Loading/Loading";
 
 const Bookings = () => {
   const axios = useAxios();
@@ -43,8 +44,8 @@ const Bookings = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen">
-        <h1>Loading data.</h1>
+      <div>
+        <Loading />
       </div>
     );
   }
