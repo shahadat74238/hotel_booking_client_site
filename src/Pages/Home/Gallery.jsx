@@ -1,19 +1,35 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className=" my-20">
       <div className="grid lg:grid-cols-4  grid-cols-1">
         <div className="lg:col-span-1 p-10">
-          <h1 className="uppercase font-semibold text-3xl  ">Out Gallery</h1>
-          <hr className="my-5 w-24 border border-f-color" />
-          <p className="mb-5">
-            Experience the pinnacle of luxury, where every detail is carefully
-            curated to provide you with a memorable stay.
-          </p>
-          <Link to="/gallery" className="text-f-color underline font-semibold">View All</Link>
+          <div data-aos="fade-down" data-aos-duration="2000">
+            <h1 className="uppercase font-semibold text-3xl  ">Out Gallery</h1>
+            <hr className="my-5 w-24 border border-f-color" />
+          </div>
+          <div data-aos="fade-down" data-aos-duration="2000">
+            <p className="mb-5">
+              Experience the pinnacle of luxury, where every detail is carefully
+              curated to provide you with a memorable stay.
+            </p>
+            <Link
+              to="/gallery"
+              className="text-f-color underline font-semibold"
+            >
+              View All
+            </Link>
+          </div>
         </div>
         <div className="lg:col-span-3  ">
           <Swiper
