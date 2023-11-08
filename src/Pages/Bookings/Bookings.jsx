@@ -136,7 +136,7 @@ const Bookings = () => {
                           dateFormat="MMMM d, yyyy "
                           selected={newDate}
                           onChange={(date) => setNewDate(date)}
-                          minDate={new Date()}
+                          minDate={new Date(b.checkOut)}
                         />
                       </div>
                     </div>
