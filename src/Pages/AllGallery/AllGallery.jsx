@@ -21,7 +21,7 @@ const AllGallery = () => {
           </div>
         </div>
         <div className="container mb-20 mx-auto px-5">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="bg-black">
               <img
                 className="hover:opacity-70"
