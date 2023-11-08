@@ -73,7 +73,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[50vh] lg:h-screen w-full bg-[url('https://portozante.com/wp-content/uploads/2019/04/Porto-Zante-Luxury-Villas-Greece-Zakynthos-Greek-Ionian-Islands-Heated-Pool-Beachfront-Villas-Best-Family-Coulpe_Resorts-_CD9A0908final-warm_1400px.jpg')] bg-no-repeat bg-center bg-cover">
+          <div className="h-[50vh] lg:h-screen w-full bg-[url('https://w0.peakpx.com/wallpaper/240/377/HD-wallpaper-bedroom-hotel-room-light-design-modern-apartment-interior-idea-modern-design.jpg')] bg-no-repeat bg-center bg-cover">
             <div className="h-full bg-black/60 w-full flex items-center justify-center">
               <div data-aos="fade-down" data-aos-duration="2000" >
                 <h1 className="lg:text-2xl text-lg text-center text-f-color mb-3">
