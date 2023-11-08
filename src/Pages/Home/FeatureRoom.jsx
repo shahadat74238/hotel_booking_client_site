@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import useAxios from "../../Hooks/useAxios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FeatureRoom = () => {
   const axios = useAxios();
   const [rooms, setRooms] = useState();
   const [isLoading, setIsLoading] = useState(false);
   console.log(rooms);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     const getData = async () => {
@@ -36,7 +43,8 @@ const FeatureRoom = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
         {rooms?.map((room) => (
-          <div key={room._id} className=" group cursor-pointer">
+          <div key={room._id} className=" group cursor-pointer" data-aos="fade-up"
+          data-aos-duration="3000" >
             <div className="relative overflow-hidden">
               <img
                 className="h-60 w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"

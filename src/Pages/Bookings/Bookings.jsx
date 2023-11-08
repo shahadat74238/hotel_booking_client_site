@@ -53,6 +53,7 @@ const Bookings = () => {
     try {
       const res = await axios.put(`/booking?id=${id}`, {newDate: formattedDate1});
       window.location.reload();
+      Swal.fire("Updated", "Successfully Updated", "success");
       console.log(res);
     } catch (error) {
       console.log(error);

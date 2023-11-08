@@ -2,11 +2,19 @@ import { Helmet } from "react-helmet-async";
 import useAxios from "../../Hooks/useAxios";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Gallery from "../Home/Gallery";
 
 const Rooms = () => {
   const axios = useAxios();
   const [rooms, setRooms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   const [price, setPrice] = useState("");
   console.log(price);
@@ -68,7 +76,7 @@ const Rooms = () => {
           </div>
           <div className="mt-10 grid gap-20  lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
             {rooms?.data.map((room) => (
-              <div key={room._id} className=" group cursor-pointer">
+              <div data-aos="zoom-in" data-aos-duration="1000" key={room._id} className=" group cursor-pointer">
                 <div className="relative overflow-hidden">
                   <img
                     className="h-60 w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"
@@ -103,6 +111,9 @@ const Rooms = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div>
+        <Gallery />
       </div>
     </div>
   );
