@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Gallery from "../Home/Gallery";
+import Team from "./Team";
+import WhyChoose from "./WhyChoose";
 
 const About = () => {
   return (
@@ -25,8 +27,11 @@ const About = () => {
         </div>
       </div>
       <div>
+        <WhyChoose />
         <Gallery />
+        <Team />
       </div>
+
     </div>
   );
 };

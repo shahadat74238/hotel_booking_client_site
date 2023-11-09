@@ -4,6 +4,7 @@ import Gallery from "./Gallery";
 import Services from "./Services";
 import GoogleMap from "./GoogleMap";
 import FeatureRoom from "./FeatureRoom";
+import Team from "../About/Team";
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Services />
             <FeatureRoom />
             <Gallery />
+            <Team />
             <GoogleMap />
         </div>
     );

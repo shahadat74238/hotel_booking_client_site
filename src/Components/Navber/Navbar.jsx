@@ -14,19 +14,13 @@ const Navbar = () => {
     try{
       await logOut() 
       await axios.post("/logout")
+      toast.success("Successfully logged out !", {
+        duration: 4000,
+      });
     }
     catch (err){
       console.log(err.message);
     }
-    logOut()
-      .then(() => {
-        toast.success("Successfully logged out !", {
-          duration: 4000,
-        });
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
   };
 
   const navLinks = (

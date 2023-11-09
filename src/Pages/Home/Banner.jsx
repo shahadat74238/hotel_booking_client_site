@@ -41,10 +41,13 @@ const Banner = () => {
                 >
                   Clean and Modern
                 </h1>
-                <hr className="lg:my-10 md:my-4 my-2 w-60 mx-auto border border-f-color" />
-                <p className="text-white lg:text-lg  w-96 mx-auto text-center">
-                  Unwind in opulent and beautifully designed rooms and suites,
-                  offering the utmost in luxury and relaxation.
+                <hr className="my-5 w-60 mx-auto border border-f-color" />
+                <p className="text-white uppercase md:text-4xl text-2xl font-semibold mx-auto text-center">
+                   <span>special offer</span>
+                   <br />
+                   <span className="text-f-color">
+                    20% off
+                   </span>
                 </p>
               </div>
             </div>
@@ -64,9 +67,12 @@ const Banner = () => {
                   Relaxation time
                 </h1>
                 <hr className="lg:my-10 md:my-4 my-2 w-60 mx-auto border border-f-color" />
-                <p className="text-white lg:text-lg  w-96 mx-auto text-center">
-                  Unwind in opulent and beautifully designed rooms and suites,
-                  offering the utmost in luxury and relaxation.
+                <p className="text-white uppercase md:text-4xl text-2xl font-semibold mx-auto text-center">
+                   <span>special offer</span>
+                   <br />
+                   <span className="text-f-color">
+                    20% off
+                   </span>
                 </p>
               </div>
             </div>
@@ -86,9 +92,12 @@ const Banner = () => {
                   Stunning hotel
                 </h1>
                 <hr className="lg:my-10 md:my-4 my-2 w-60 mx-auto border border-f-color" />
-                <p className="text-white lg:text-lg  w-96 mx-auto text-center">
-                  Unwind in opulent and beautifully designed rooms and suites,
-                  offering the utmost in luxury and relaxation.
+                <p className="text-white uppercase md:text-4xl text-2xl font-semibold mx-auto text-center">
+                   <span>special offer</span>
+                   <br />
+                   <span className="text-f-color">
+                    20% off
+                   </span>
                 </p>
               </div>
             </div>
