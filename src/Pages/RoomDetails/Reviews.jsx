@@ -3,7 +3,7 @@ import useAxios from "../../Hooks/useAxios";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import Rating from "react-rating";
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 
 const Reviews = () => {
@@ -54,6 +54,7 @@ const Reviews = () => {
                   <h3 className="text-gray-400">{r.formattedDate}</h3>
                   <p className="text-justify">{r.comment}</p>
                   <Rating
+               emptySymbol={<AiOutlineStar className="text-2xl text-f-color" />}
                fullSymbol={<AiFillStar className="text-2xl text-f-color" />}
                fractions={2}
                initialRating={r.rating}

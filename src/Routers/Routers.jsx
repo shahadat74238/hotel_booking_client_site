@@ -12,6 +12,7 @@ import Information from "../Pages/RoomDetails/Information";
 import Reviews from "../Pages/RoomDetails/Reviews";
 import AllGallery from "../Pages/AllGallery/AllGallery";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import UpdateBooking from "../Pages/UpdateBooking/UpdateBooking";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
         element: (
           <PrivetRouter>
             <Bookings />
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/booking/:id",
+        element: (
+          <PrivetRouter>
+            <UpdateBooking />
           </PrivetRouter>
         ),
       },

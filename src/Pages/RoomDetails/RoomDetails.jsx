@@ -8,8 +8,6 @@ const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
 
-
-
   const getRoom = async () => {
     try {
       const res = await axios.get(`/rooms/${id}`);

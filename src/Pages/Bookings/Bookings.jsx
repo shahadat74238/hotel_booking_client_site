@@ -4,25 +4,16 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import BookingSide from "./BookingSide";
 import { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
 import Swal from "sweetalert2";
 import Loading from "../../Components/Loading/Loading";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Bookings = () => {
   const axios = useAxios();
   const { user } = useAuth();
   const [bookingData, setBookingData] = useState();
-  const [newDate, setNewDate] = useState(new Date());
-  const options = {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  };
-  const formattedDate1 = new Intl.DateTimeFormat("en-US", options).format(
-    newDate
-  );
 
   useEffect(() => {
     AOS.init();
@@ -57,20 +48,7 @@ const Bookings = () => {
     );
   }
 
-  const handleUpdate = async(id) => {
-    try {
-      const res = await axios.put(`/booking?id=${id}`, {newDate: formattedDate1});
-      window.location.reload();
-      Swal.fire("Updated", "Successfully Updated", "success");
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
   const handleCancel = async (id) => {
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -79,7 +57,7 @@ const Bookings = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-    }).then(async(result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           const res = await axios.delete(`/booking/${id}`);
@@ -92,7 +70,6 @@ const Bookings = () => {
         }
       }
     });
-    
   };
 
   return (
@@ -108,8 +85,13 @@ const Bookings = () => {
           {bookingData?.length > 0 ? (
             <div className="lg:col-span-3 grid  gap-10">
               {bookingData?.map((b) => (
-                <div data-aos="zoom-in" data-aos-duration="2000" key={b._id} className="grid grid-cols-1 md:grid-cols-2 ">
-                  <div className=" overflow-hidden">
+                <div
+                  data-aos="zoom-in"
+                  data-aos-duration="2000"
+                  key={b._id}
+                  className="grid grid-cols-1 items-center shadow-md md:grid-cols-2 "
+                >
+                  <div className="h-full overflow-hidden">
                     <img
                       className="h-full w-full object-cover transition-transform transform scale-100 duration-500 group-hover:scale-105"
                       src={b.roomPhoto}
@@ -136,17 +118,6 @@ const Bookings = () => {
                         Check Out Date:{" "}
                         <span className="text-gray-400">{b.checkOut}</span>
                       </p>
-                      <div className="mt-5">
-                        <p className="text-lg font-medium" >Update Your Check Out Date</p>
-                        <DatePicker
-                          className="w-full outline-none border text-black text-center font-semibold text-lg"
-                          showIcon
-                          dateFormat="MMMM d, yyyy "
-                          selected={newDate}
-                          onChange={(date) => setNewDate(date)}
-                          minDate={new Date(b.checkOut)}
-                        />
-                      </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-10 mt-5">
@@ -156,16 +127,22 @@ const Bookings = () => {
                       >
                         Cancel
                       </button>
-                      <button onClick={()=>handleUpdate(b._id)} className="f-btn w-full h-10 uppercase">
+                      <Link to={`/booking/${b._id}`}>
+                      <button className="f-btn w-full h-10 uppercase">
                         Update Date
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <div data-aos="zoom-in" data-aos-duration="2000" className="lg:col-span-3">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              className="lg:col-span-3"
+            >
               <p className="text-5xl font-semibold text-center text-gray-400">
                 No Booking Room Available !
               </p>
