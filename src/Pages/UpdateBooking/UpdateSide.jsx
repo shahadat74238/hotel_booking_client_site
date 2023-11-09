@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 
 const UpdateSide = ({room}) => {
+  console.log(room);
   const axios = useAxios();
   const [newDate, setNewDate] = useState(new Date(room?.checkOut));
   const options = {
@@ -18,10 +19,10 @@ const UpdateSide = ({room}) => {
 
   const handleUpdate = async (event,id) => {
     event.preventDefault();
+    const roomId = room.roomId;
+    const updateData = {newDate: formattedDate1, roomId }
     try {
-      const res = await axios.put(`/booking?id=${id}`, {
-        newDate: formattedDate1,
-      });
+      const res = await axios.patch(`/booking?id=${id}`, updateData);
       Swal.fire("Updated", "Successfully Updated", "success");
       console.log(res);
     } catch (error) {

@@ -6,11 +6,11 @@ import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import Swal from "sweetalert2";
 
-
 const Side = ({ room }) => {
-  
   const [checkIn, setCheckIn] = useState(new Date());
-  const [checkOut, setCheckOut] = useState(new Date().setDate(new Date().getDate() + 1));
+  const [checkOut, setCheckOut] = useState(
+    new Date().setDate(new Date().getDate() + 1)
+  );
   const axios = useAxios();
   const { user } = useAuth();
 
@@ -25,7 +25,6 @@ const Side = ({ room }) => {
   const formattedDate2 = new Intl.DateTimeFormat("en-US", options).format(
     checkOut
   );
-
 
   const handleBooking = async (event) => {
     event.preventDefault();
@@ -63,7 +62,7 @@ const Side = ({ room }) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, Booking.",
-    }).then(async(result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           const response = await axios.post("/booking", bookingData);
@@ -75,8 +74,6 @@ const Side = ({ room }) => {
         }
       }
     });
-
-    
   };
 
   return (
@@ -115,9 +112,11 @@ const Side = ({ room }) => {
               className="w-full outline-none text-black text-center font-semibold text-lg"
               showIcon
               dateFormat="MMMM d, yyyy "
-              selected={checkOut}
               onChange={(date) => setCheckOut(date)}
+              showTimeSelect
+              timeIntervals={2}
               minDate={new Date().setDate(new Date().getDate() + 1)}
+              selected={checkOut}
             />
           </div>
         </div>
