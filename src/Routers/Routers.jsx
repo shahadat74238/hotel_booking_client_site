@@ -13,6 +13,7 @@ import Reviews from "../Pages/RoomDetails/Reviews";
 import AllGallery from "../Pages/AllGallery/AllGallery";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import UpdateBooking from "../Pages/UpdateBooking/UpdateBooking";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <AllGallery />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/about",
