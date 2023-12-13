@@ -11,11 +11,11 @@ const Gallery = () => {
     AOS.refresh();
   }, []);
   return (
-    <div className=" my-20">
+    <div className="my-20 mx-5">
       <div className="grid lg:grid-cols-4  grid-cols-1">
         <div className="lg:col-span-1 p-10">
           <div data-aos="fade-up" data-aos-duration="2000">
-            <h1 className="uppercase font-semibold text-3xl  ">Out Gallery</h1>
+            <h1 className="uppercase font-semibold text-3xl  ">Our Gallery</h1>
             <hr className="my-5 w-24 border border-f-color" />
           </div>
           <div data-aos="fade-up" data-aos-duration="2000">
