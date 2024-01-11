@@ -113,10 +113,8 @@ const Side = ({ room }) => {
               showIcon
               dateFormat="MMMM d, yyyy "
               onChange={(date) => setCheckOut(date)}
-              showTimeSelect
-              timeIntervals={2}
-              minDate={new Date().setDate(new Date().getDate() + 1)}
               selected={checkOut}
+              minDate={new Date().setDate(new Date().getDate() + 1)}
             />
           </div>
         </div>

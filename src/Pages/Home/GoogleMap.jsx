@@ -19,7 +19,7 @@ const GoogleMap = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: googleApiKey }}
