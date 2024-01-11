@@ -65,11 +65,11 @@ const Login = () => {
       <Helmet>
         <title className="uppercase">Five Star | Login </title>
       </Helmet>
-      <div className="container mx-auto py-10">
-        <div style={{ boxShadow: '2px 10px 10px 1px rgba(0, 0, 0, 0.4)' }} className=" lg:w-2/4 w-4/5 mx-auto ">
+      <div className="container mx-auto lg:py-10">
+        <div style={{ boxShadow: '2px 10px 10px 1px rgba(0, 0, 0, 0.4)' }} className=" lg:w-2/4  mx-auto ">
           <div className=" overflow-hidden  bg-[url('https://digital.ihg.com/is/image/ihg/ihgor-member-rate-web-offers-1440x720')] bg-no-repeat bg-cover bg-center h-80">
             <div className="h-full w-full bg-black/30 py-10 px-10 md:px-15 lg:px-20">
-              <h1 className="text-4xl font-bold uppercase text-white mb-5">
+              <h1 className="text-2xl md:text-4xl font-bold uppercase text-white mb-5">
                 Welcome
                 <br /> to the Five Star
               </h1>
